@@ -1,0 +1,75 @@
+<coreui-tab-group coreUITabRouterGroup tabStyle="vertical">
+
+    <coreui-tab label="Applications" routerLink="applications">
+      <p>Some content for tab 1</p>
+  
+      <coreui-table>
+        <caption>Showcasing default table implementation</caption>
+        <thead coreUITableSort>
+        <tr coreUITableHeaderRow>
+          <th >
+            <coreui-table-header-column  [active]="true" sortDirection="ASC">
+              Product
+            </coreui-table-header-column>
+          </th>
+          <th >
+            <coreui-table-header-column >
+              Category
+            </coreui-table-header-column>
+          </th>
+          <th >
+            <coreui-table-multiple-header-column label="List">
+              <coreui-table-header-column >
+                List
+              </coreui-table-header-column>
+              <coreui-table-header-column >
+                Created Date
+              </coreui-table-header-column>
+            </coreui-table-multiple-header-column>
+          </th>
+          <th >
+            <coreui-table-header-column >
+              Updated
+            </coreui-table-header-column>
+          </th>
+          <th aria-label="actions" coreUITableActionColumn></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of defaultItems" coreUITableRow>
+          <td>{{item.product}}</td>
+          <td>{{item.category}}</td>
+          <td>{{item.list}}
+            <div class="text-style-muted-3">{{item.createdDaysAgo}}</div>
+          </td>
+          <td>{{item.updated | coreUILocaleDate}}
+            <div class="text-style-muted-3"> {{item.updated | coreUILocalTime}}</div>
+          </td>
+          <td aria-label="actions" coreUITableActionColumn>
+            <coreui-menu menuButtonStyle="link" icon="more">
+              <coreui-menu-section>
+                <button type="button" coreUIMenuItem>
+                  Copy
+                </button>
+                <button type="button" coreUIMenuItem>
+                  Delete
+                </button>
+              </coreui-menu-section>
+            </coreui-menu>
+          </td>
+        </tr>
+        </tbody>
+      </coreui-table>
+    </coreui-tab>
+  
+  
+    <coreui-tab label="Clients" routerLink="clients">
+      <p>Some content for tab 2</p>
+    </coreui-tab>
+  
+    <coreui-tab label="Clients1" routerLink="clients2">
+      <p>Some content for tab 3</p>
+    </coreui-tab>
+  
+  </coreui-tab-group>
+  
